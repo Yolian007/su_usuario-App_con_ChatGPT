@@ -147,31 +147,17 @@ if categoria == "Temperatura":
         resultado = kelvin_to_celsius(valor)
 
 elif categoria == "Longitud":
-    # Aquí se incluyen las demás opciones de conversión de longitud, siguiendo el mismo patrón que la temperatura
+    tipo_conversion = st.selectbox("Selecciona el tipo de conversión:", ["Feet a Meters", "Meters a Feet", "Inches a Centimeters", "Centimeters a Inches"])
+    valor = st.number_input("Ingresar el valor a convertir")
 
-elif categoria == "Peso/Masa":
-    # Aquí se incluyen las opciones de conversión de peso/masa, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Volumen":
-    # Aquí se incluyen las opciones de conversión de volumen, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Tiempo":
-    # Aquí se incluyen las opciones de conversión de tiempo, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Velocidad":
-    # Aquí se incluyen las opciones de conversión de velocidad, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Área":
-    # Aquí se incluyen las opciones de conversión de área, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Energía":
-    # Aquí se incluyen las opciones de conversión de energía, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Presión":
-    # Aquí se incluyen las opciones de conversión de presión, siguiendo el mismo patrón que la temperatura
-
-elif categoria == "Tamaño de datos":
-    # Aquí se incluyen las opciones de conversión de tamaño de datos, siguiendo el mismo patrón que la temperatura
+    if tipo_conversion == "Pies a Metros":
+        resultado = feet_to_meters(valor)
+    elif tipo_conversion == "Metros a Pies":
+        resultado = meters_to_feet(valor)
+    elif tipo_conversion == "Pulgadas a Centímetros":
+        resultado = inches_to_centimeters(valor)
+    elif tipo_conversion == "Centímetros a Pulgadas":
+        resultado = centimeters_to_inches(valor)
 
 # Mostrar resultado
 st.write(f"El resultado de la conversión es: {resultado}")
